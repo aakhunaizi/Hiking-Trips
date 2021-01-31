@@ -103,12 +103,11 @@ export const TripCity = styled.p`
 
 export const TripLength = styled.p`
   font-size: 30px;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   display: block;
 `;
 
 export const TripDifficulty = styled.p`
-  margin-top: 30px;
   font-size: 25px;
 `;
 
@@ -134,5 +133,42 @@ export const BackButton = styled.div`
   margin-bottom: 20px;
   button {
     margin-right: 20px;
+  }
+`;
+
+export const DetailedName = styled.p`
+  font-size: 50px;
+`;
+
+export const DetailedCity = styled.p`
+  font-size: 30px;
+`;
+
+export const DetailedLength = styled.p`
+  font-size: 40px;
+  display: inline;
+`;
+
+export const DetailedDifficulty = styled.p`
+  font-size: 40px;
+  display: inline-block;
+`;
+
+export const DetailedRating = styled.p`
+  font-size: 60px;
+`;
+
+export const DetailedDescription = styled.p`
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  float: right;
+`;
+
+export const DetailedImage = styled.div`
+  img {
+    width: 900px;
+    float: left;
+    border: 5px solid orange;
   }
 `;

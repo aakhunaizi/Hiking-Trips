@@ -8,6 +8,7 @@ import {
   TripRating,
 } from "../styles";
 import { GiPathDistance } from "react-icons/gi";
+import { BiRun } from "react-icons/bi";
 
 const TripItem = ({ trip }) => {
   return (
@@ -18,8 +19,8 @@ const TripItem = ({ trip }) => {
       <TripName>{trip.name}</TripName>
       <TripCity>{trip.city}</TripCity>
       <GiPathDistance size="30px" />
-      <TripLength>{trip.length}</TripLength>
-      <h4>KM</h4>
+      <TripLength>{trip.length} KM</TripLength>
+      <BiRun size="30px" />
       <TripDifficulty>{trip.difficulty}</TripDifficulty>
       <TripRating>{trip.rating}</TripRating>
     </TripWrapper>
