@@ -8,6 +8,7 @@ const Home = () => {
       <HomeImage
         alt="hiking"
         src="https://wildlandtrekking.com/content/uploads/2020/03/Tour-du-Mont-Blanc-image4-1.jpg"
+        className="homeimage"
       />
     </>
   );

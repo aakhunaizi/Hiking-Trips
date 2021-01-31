@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
-import { TripWrapper } from "../styles";
+import {
+  TripWrapper,
+  TripName,
+  TripCity,
+  TripLength,
+  TripDifficulty,
+  TripRating,
+} from "../styles";
 
 const TripItem = ({ trip }) => {
   return (
     <TripWrapper>
-      <Link to={`/trips/${trip.slug}`}>
+      <Link to={`/trips/trip/${trip.slug}`}>
         <img alt={trip.name} src={trip.image} />
       </Link>
-      <p>{trip.name}</p>
-      <p>{trip.city}</p>
-      <p>{trip.length}</p>
-      <p>{trip.difficulty}</p>
-      <p>{trip.rating}</p>
+      <TripName>{trip.name}</TripName>
+      <TripCity>{trip.city}</TripCity>
+      <TripLength>{trip.length}</TripLength>
+      <TripDifficulty>{trip.difficulty}</TripDifficulty>
+      <TripRating>{trip.rating}</TripRating>
     </TripWrapper>
   );
 };

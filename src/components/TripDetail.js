@@ -1,7 +1,13 @@
 import { Redirect, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { DetailWrapper, ListWrapper } from "../styles";
+import {
+  DetailWrapper,
+  ListWrapper,
+  SuggestListWrapper,
+  BackButton,
+} from "../styles";
 import TripItem from "./TripItem";
+import { Button } from "react-bootstrap";
 
 const TripDetail = ({ trips }) => {
   const { tripSlug } = useParams();
@@ -18,17 +24,20 @@ const TripDetail = ({ trips }) => {
   return (
     <DetailWrapper>
       <img alt={trip.name} src={trip.image} />
-      <h3>{trip.name}</h3>
+      <p>{trip.name}</p>
       <p>{trip.city}</p>
       <p>{trip.length}</p>
-      <p>{trip.difficulty}</p>
+      <p>{trip.difficulty} </p>
       <p>{trip.rating}</p>
       <p>{trip.description}</p>
-      <Link to="/trips">
-        <button>Back</button>
-      </Link>
 
-      <ListWrapper>{suggestList}</ListWrapper>
+      <Link to="/trips">
+        <BackButton>
+          <Button variant="primary">Back</Button>
+        </BackButton>
+      </Link>
+      <h1>Recommended Trips</h1>
+      <SuggestListWrapper>{suggestList}</SuggestListWrapper>
     </DetailWrapper>
   );
 };

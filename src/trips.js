@@ -1,3 +1,5 @@
+import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { GiPathDistance } from "react-icons/gi";
 const trips = [
   {
     id: 1,
@@ -12,8 +14,20 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Mountains-to-Fjords-Hut-to-Hut-image3-1.jpg",
     city: "Oslo, Norway",
     difficulty: "hard",
-    length: 59,
-    rating: 3.5,
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>59 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarHalf size="30px" color="gold" />
+        <BsStar size="30px" color="gold" />
+      </>
+    ),
   },
   {
     id: 2,
@@ -26,8 +40,20 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Iceland-Winter-Wonders-Tour-image6-2.jpg",
     city: "Reykjavik, Iceland",
     difficulty: "easy",
-    length: 26,
-    rating: 4.5,
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>26 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarHalf size="30px" color="gold" />
+      </>
+    ),
   },
   {
     id: 3,
@@ -38,10 +64,22 @@ const trips = [
     Enjoy starting at the popular South Rim, hiking classic trails with quintessential views, visiting historic Phantom Ranch, camping at breathtaking Bright Angel Campground, spending time at the Colorado River, and hiking by ancient Indian Gardens. You can just relax and enjoy yourself, as we provide all the gear, tasty meals, and a professional guide. This hike is an all-around taste of the Grand Canyon in a relatively short amount of time – don’t miss it!`,
     image:
       "https://wildlandtrekking.com/content/uploads/2020/03/magcc-slides8.jpg",
-    city: "Arizona, United States of America",
+    city: "Arizona, USA",
     difficulty: "medium",
-    length: 27,
-    rating: 5,
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>27 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+      </>
+    ),
   },
   {
     id: 4,
@@ -52,8 +90,20 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Tour-du-Mont-Blanc-image4-1.jpg",
     city: " Geneva, Switzerland",
     difficulty: "hard",
-    length: 82,
-    rating: 5,
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>82 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+      </>
+    ),
   },
   {
     id: 5,
@@ -63,8 +113,45 @@ const trips = [
     image: "https://wildlandtrekking.com/content/uploads/2020/03/image7-5.jpg",
     city: "Hanoi, Vietnam",
     difficulty: "easy",
-    length: 56,
-    rating: 4,
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>56 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStar size="30px" color="gold" />
+      </>
+    ),
+  },
+  {
+    id: 6,
+    name: "Short Icna Trail",
+    slug: "short-icna-trail",
+    description: `Join us for a lodge-based tour highlighting Cusco, a section of the famous Inca Trail, amazing hikes and historic sites, and the world renowned Machu Picchu! With stunning Andean scenery, an amazing diversity of flora and fauna, the comfort of mountain lodges, several days of hiking and exploring the ancient Inca Empire, an opportunity to visit the Inca Trail’s most breathtaking site (Wiñaywayna), and a full day to explore Machu Picchu, this action-packed tour offers a tremendous amount of experience in just 6 days and 5 nights.
+
+    We start our lodge-based Peru trekking trip with tours of the historic, Andean town of Cusco and surrounding historic sites. Then, on Day 3, we embark on a spectacular, off-the-beaten-path trek to a high mountain quarry used by the Inca. On Day 4 we tackle the “Short Inca Trail,” a journey that takes us past stunning hillside ruins and amazing views to the spectacular Sun Gate, which protects and overlooks Machu Picchu. On Day 5 we enjoy a full tour of Machu Picchu by our local, expert guide.`,
+    image: "https://wildlandtrekking.com/content/uploads/2020/03/image8-17.jpg",
+    city: "Cusco, Peru",
+    difficulty: "medium",
+    length: (
+      <div>
+        <GiPathDistance size="30px" /> <h3>32 KM </h3>
+      </div>
+    ),
+    rating: (
+      <>
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStarFill size="30px" color="gold" />
+        <BsStar size="30px" color="gold" />
+        <BsStar size="30px" color="gold" />
+      </>
+    ),
   },
 ];
 

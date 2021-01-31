@@ -39,10 +39,11 @@ export const ListWrapper = styled.div`
 
 export const TripWrapper = styled.div`
   margin: 20px;
-  float: left;
-
+  display: inline-block;
+  border: solid 2px black;
   img {
     height: 200px;
+    border: 5px solid white;
   }
 
   p {
@@ -85,6 +86,49 @@ export const Buttons = styled.div`
   display: inline-flex;
   margin-bottom: 20px;
 
+  button {
+    margin-right: 20px;
+  }
+`;
+
+export const TripName = styled.p`
+  font-size: 30px;
+`;
+
+export const TripCity = styled.p`
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: -15px;
+`;
+
+export const TripLength = styled.p`
+  font-size: 10px;
+`;
+
+export const TripDifficulty = styled.p`
+  font-size: 20px;
+`;
+
+export const TripRating = styled.p`
+  font-size: 10px;
+`;
+export const SuggestListWrapper = styled.div`
+  margin: 20px;
+  display: inline-block;
+  width: 45%;
+  img {
+    width: 350px;
+    border: 5px solid white;
+  }
+
+  p {
+    text-align: center;
+  }
+`;
+
+export const BackButton = styled.div`
+  clear: both;
+  margin-bottom: 20px;
   button {
     margin-right: 20px;
   }
