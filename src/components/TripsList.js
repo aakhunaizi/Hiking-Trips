@@ -1,9 +1,9 @@
-import trips from "../trips";
 import TripItem from "./TripItem";
+
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import RangeBar from "./RangeBar";
-const TripsList = () => {
+const TripsList = ({ trips, setTrip }) => {
   const [query, setQuery] = useState("");
 
   const [range, setRange] = useState(50);
@@ -15,13 +15,13 @@ const TripsList = () => {
   );
 
   const tripList = filteredTrips.map((trip) => (
-    <TripItem key={trip.id} trip={trip} />
+    <TripItem setTrip={setTrip} key={trip.id} trip={trip} />
   ));
 
   const filteredByLength = trips.filter((trip) => trip.length <= range);
 
   const byLength = filteredByLength.map((trip) => (
-    <TripItem key={trip.id} trip={trip} />
+    <TripItem setTrip={setTrip} key={trip.id} trip={trip} />
   ));
 
   const listView = () => {

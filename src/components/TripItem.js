@@ -1,9 +1,7 @@
-const TripItem = (props) => {
-  const trip = props.trip;
-
+const TripItem = ({ trip, setTrip }) => {
   return (
     <div>
-      <img alt={trip.name} src={trip.image} />
+      <img onClick={() => setTrip(trip)} alt={trip.name} src={trip.image} />
       <h3>{trip.name}</h3>
       <p>{trip.city}</p>
       <p>{trip.length}</p>
