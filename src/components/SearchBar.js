@@ -1,11 +1,13 @@
+import { SearchBarStyled } from "../styles";
+
 const SearchBar = (props) => {
   return (
-    <input
+    <SearchBarStyled
       onChange={(event) => {
         props.setQuery(event.target.value);
       }}
       placeholder="Search for your next adventure!"
-    ></input>
+    ></SearchBarStyled>
   );
 };
 

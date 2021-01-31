@@ -1,5 +1,6 @@
 import { Redirect, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { DetailWrapper, ListWrapper } from "../styles";
 import TripItem from "./TripItem";
 
 const TripDetail = ({ trips }) => {
@@ -12,10 +13,10 @@ const TripDetail = ({ trips }) => {
     )
     .map((_trip) => <TripItem key={_trip.id} trip={_trip} />);
 
-  if (!trip) return <Redirect to="/"></Redirect>;
+  if (!trip) return <Redirect to="/trip"></Redirect>;
 
   return (
-    <div>
+    <DetailWrapper>
       <img alt={trip.name} src={trip.image} />
       <h3>{trip.name}</h3>
       <p>{trip.city}</p>
@@ -23,12 +24,12 @@ const TripDetail = ({ trips }) => {
       <p>{trip.difficulty}</p>
       <p>{trip.rating}</p>
       <p>{trip.description}</p>
-      <Link to="/">
+      <Link to="/trips">
         <button>Back</button>
       </Link>
 
-      <div>{suggestList}</div>
-    </div>
+      <ListWrapper>{suggestList}</ListWrapper>
+    </DetailWrapper>
   );
 };
 

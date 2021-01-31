@@ -1,7 +1,10 @@
+import { RangeBarStyled } from "../styles";
+
 const RangeBar = ({ range, setRange }) => {
   return (
     <div>
-      <input
+      <p>{range}</p>
+      <RangeBarStyled
         id="typeinp"
         type="range"
         min="0"
@@ -12,7 +15,6 @@ const RangeBar = ({ range, setRange }) => {
         }}
         step="1"
       />
-      <p>{range}</p>
     </div>
   );
 };

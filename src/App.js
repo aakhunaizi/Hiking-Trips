@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import trips from "./trips";
 import TripDetail from "./components/TripDetail";
 import { Route, Switch } from "react-router";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [_trips, setTrips] = useState(trips);
@@ -16,16 +18,19 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Switch>
-        {/* <Route path="/trips/:difficulty"></Route> */}
-        <Route path="/trips/:tripSlug">
+        <Route path="/trips/trip/:tripSlug">
           <TripDetail trips={trips} />
         </Route>
-        <Route path="/:difficulty">
+        <Route path="/trips/:difficulty">
+          <TripsList trips={_trips} />
+        </Route>
+        <Route path="/trips">
           <TripsList trips={_trips} />
         </Route>
         <Route path="/">
-          <TripsList trips={_trips} />
+          <Home />
         </Route>
       </Switch>
       {/* {display} */}

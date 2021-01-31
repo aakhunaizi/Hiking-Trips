@@ -2,8 +2,10 @@ import TripItem from "./TripItem";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import RangeBar from "./RangeBar";
-import { Dropdown } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 import { useParams } from "react-router";
+import { Buttons, ListWrapper } from "../styles";
+
 const TripsList = ({ trips }) => {
   const [query, setQuery] = useState("");
 
@@ -45,22 +47,33 @@ const TripsList = ({ trips }) => {
   };
 
   return (
-    <div>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Difficulty: {difficulty}
-        </Dropdown.Toggle>
+    <>
+      <div>
+        <SearchBar setQuery={setQuery} />
+      </div>
+      <Buttons>
+        <div>
+          <Button variant="primary" onClick={() => setFilter(!filter)}>
+            Filter
+          </Button>
+        </div>
+        <div>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic">
+              Difficulty: {difficulty}
+            </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          <Dropdown.Item href="/easy">easy</Dropdown.Item>
-          <Dropdown.Item href="/medium">medium</Dropdown.Item>
-          <Dropdown.Item href="/hard">hard</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <button onClick={() => setFilter(!filter)}>Filter by length</button>
-      <SearchBar setQuery={setQuery} />
-      {listView()}
-    </div>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/trips/easy">easy</Dropdown.Item>
+              <Dropdown.Item href="/trips/medium">medium</Dropdown.Item>
+              <Dropdown.Item href="/trips/hard">hard</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+      </Buttons>
+
+      <ListWrapper>{listView()}</ListWrapper>
+    </>
   );
 };
 
