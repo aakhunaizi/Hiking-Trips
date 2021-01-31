@@ -1,5 +1,5 @@
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
-import { GiPathDistance } from "react-icons/gi";
+
 const trips = [
   {
     id: 1,
@@ -14,11 +14,7 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Mountains-to-Fjords-Hut-to-Hut-image3-1.jpg",
     city: "Oslo, Norway",
     difficulty: "hard",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>59 KM </h3>
-      </div>
-    ),
+    length: 59,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />
@@ -40,11 +36,7 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Iceland-Winter-Wonders-Tour-image6-2.jpg",
     city: "Reykjavik, Iceland",
     difficulty: "easy",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>26 KM </h3>
-      </div>
-    ),
+    length: 26,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />
@@ -66,11 +58,7 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/magcc-slides8.jpg",
     city: "Arizona, USA",
     difficulty: "medium",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>27 KM </h3>
-      </div>
-    ),
+    length: 27,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />
@@ -90,11 +78,7 @@ const trips = [
       "https://wildlandtrekking.com/content/uploads/2020/03/Tour-du-Mont-Blanc-image4-1.jpg",
     city: " Geneva, Switzerland",
     difficulty: "hard",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>82 KM </h3>
-      </div>
-    ),
+    length: 82,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />
@@ -113,11 +97,7 @@ const trips = [
     image: "https://wildlandtrekking.com/content/uploads/2020/03/image7-5.jpg",
     city: "Hanoi, Vietnam",
     difficulty: "easy",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>56 KM </h3>
-      </div>
-    ),
+    length: 56,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />
@@ -138,11 +118,7 @@ const trips = [
     image: "https://wildlandtrekking.com/content/uploads/2020/03/image8-17.jpg",
     city: "Cusco, Peru",
     difficulty: "medium",
-    length: (
-      <div>
-        <GiPathDistance size="30px" /> <h3>32 KM </h3>
-      </div>
-    ),
+    length: 32,
     rating: (
       <>
         <BsStarFill size="30px" color="gold" />

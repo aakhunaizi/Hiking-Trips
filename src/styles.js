@@ -102,11 +102,14 @@ export const TripCity = styled.p`
 `;
 
 export const TripLength = styled.p`
-  font-size: 10px;
+  font-size: 30px;
+  margin-bottom: 2px;
+  display: block;
 `;
 
 export const TripDifficulty = styled.p`
-  font-size: 20px;
+  margin-top: 30px;
+  font-size: 25px;
 `;
 
 export const TripRating = styled.p`
