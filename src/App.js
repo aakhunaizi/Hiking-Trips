@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TripsList from "./component/TripsList";
+import TripsList from "./components/TripsList";
 
 function App() {
   return (
