@@ -7,8 +7,9 @@ import TripDetail from "./components/TripDetail";
 function App() {
   const [trip, setTrip] = useState(null);
   const [_trips, setTrips] = useState(trips);
+
   const display = trip ? (
-    <TripDetail trip={trip} setTrip={setTrip} />
+    <TripDetail trip={trip} setTrip={setTrip} trips={trips} />
   ) : (
     <TripsList trips={_trips} setTrip={setTrip} />
   );
