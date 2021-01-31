@@ -1,13 +1,19 @@
+import { Redirect, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import TripItem from "./TripItem";
 
-const TripDetail = ({ trip, setTrip, trips }) => {
+const TripDetail = ({ trips }) => {
+  const { tripSlug } = useParams();
+  const trip = trips.find((trip) => trip.slug === tripSlug);
+
   const suggestList = trips
     .filter(
       (_trip) => _trip.difficulty === trip.difficulty && trip.id !== _trip.id
     )
-    .map((_trip) => <TripItem setTrip={setTrip} key={_trip.id} trip={_trip} />);
+    .map((_trip) => <TripItem key={_trip.id} trip={_trip} />);
 
-  console.log(suggestList);
+  if (!trip) return <Redirect to="/"></Redirect>;
+
   return (
     <div>
       <img alt={trip.name} src={trip.image} />
@@ -17,7 +23,10 @@ const TripDetail = ({ trip, setTrip, trips }) => {
       <p>{trip.difficulty}</p>
       <p>{trip.rating}</p>
       <p>{trip.description}</p>
-      <button onClick={() => setTrip(null)}>Back</button>
+      <Link to="/">
+        <button>Back</button>
+      </Link>
+
       <div>{suggestList}</div>
     </div>
   );
