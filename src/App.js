@@ -21,10 +21,10 @@ function App() {
         <Route path="/trips/:tripSlug">
           <TripDetail trips={trips} />
         </Route>
-        <Route path="/trips/:difficulty">
+        <Route path="/:difficulty">
           <TripsList trips={_trips} />
         </Route>
-        <Route path="/trips">
+        <Route path="/">
           <TripsList trips={_trips} />
         </Route>
       </Switch>
