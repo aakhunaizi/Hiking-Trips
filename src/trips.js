@@ -49,3 +49,5 @@ const trips = [
     rating: 4,
   },
 ];
+
+export default trips;
