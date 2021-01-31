@@ -9,75 +9,112 @@ import { Link } from "react-router-dom";
 const TripsList = ({ trips }) => {
   const [query, setQuery] = useState("");
 
-  const [range, setRange] = useState(50);
+  const maxRange = () => {
+    let max = 0;
+    trips.forEach((trip) => {
+      if (trip.length > max) max = trip.length;
+    });
+    return max;
+  };
 
-  const [filter, setFilter] = useState(false);
+  const minRange = () => {
+    let min = maxRange();
+    trips.forEach((trip) => {
+      if (trip.length < min) min = trip.length;
+    });
+    return min;
+  };
 
-  const filteredTrips = trips.filter((trip) =>
-    trip.name.toLowerCase().includes(query.toLowerCase())
-  );
+  const [range, setRange] = useState(maxRange());
 
-  const tripList = filteredTrips.map((trip) => (
-    <TripItem key={trip.id} trip={trip} />
-  ));
+  //const [filter, setFilter] = useState(false);
 
-  const filteredByLength = trips.filter((trip) => trip.length <= range);
-
-  const byLength = filteredByLength.map((trip) => (
-    <TripItem key={trip.id} trip={trip} />
-  ));
   const { difficulty } = useParams();
 
-  const filteredByDifficulty = trips
-    .filter((trip) => trip.difficulty === difficulty)
-    .map((trip) => <TripItem key={trip.id} trip={trip} />);
-  const listView = () => {
-    if (filter === false && !difficulty) return <div>{tripList}</div>;
-    else if (filter === true) {
-      return (
-        <div>
-          <RangeBar range={range} setRange={setRange} tripList={tripList} />
-          {byLength}
-        </div>
+  const difficultyDrop = () => {
+    if (difficulty) return `${difficulty.toUpperCase()}`;
+    else return `ALL`;
+  };
+
+  // const filteredTrips = trips
+  //   .filter((trip) => trip.name.toLowerCase().includes(query.toLowerCase()))
+  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
+
+  // const filteredByLength = trips
+  //   .filter((trip) => trip.length <= range)
+  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
+
+  // const filteredByDifficulty = trips
+  //   .filter((trip) => trip.difficulty === difficulty)
+  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
+
+  const filtering = (filterType, filterList) => {
+    if (filterType === "search") {
+      return filterList.filter((trip) =>
+        trip.name.toLowerCase().includes(query.toLowerCase())
       );
+    } else if (filterType === "length") {
+      return filterList.filter((trip) => trip.length <= range);
     } else {
-      return <div>{filteredByDifficulty}</div>;
+      return filterList.filter((trip) => trip.difficulty === difficulty);
     }
   };
 
+  const listView = () => {
+    let filtered = [];
+    if (query !== "" && difficulty) {
+      filtered = filtering("search", trips);
+      filtered = filtering("length", filtered);
+      filtered = filtering("difficulty", filtered);
+      return filtered.map((trip) => <TripItem key={trip.id} trip={trip} />);
+    } else if (query !== "" && !difficulty) {
+      filtered = filtering("search", trips);
+      filtered = filtering("length", filtered);
+      return filtered.map((trip) => <TripItem key={trip.id} trip={trip} />);
+    } else if (query === "" && difficulty) {
+      filtered = filtering("length", trips);
+      filtered = filtering("difficulty", filtered);
+      return filtered.map((trip) => <TripItem key={trip.id} trip={trip} />);
+    } else {
+      filtered = filtering("length", trips);
+      return filtered.map((trip) => <TripItem key={trip.id} trip={trip} />);
+    }
+  };
+
+  // onClick={() => setFilter(!filter)}
+
   return (
     <>
-      <div>
-        <SearchBar setQuery={setQuery} />
-      </div>
-      <Buttons>
-        <div>
-          <Button variant="primary" onClick={() => setFilter(!filter)}>
-            Filter
-          </Button>
-        </div>
-        <div>
-          <Dropdown>
-            <Dropdown.Toggle id="dropdown-basic">
-              Difficulty: {difficulty}
-            </Dropdown.Toggle>
+      <SearchBar setQuery={setQuery} />
 
-            <Dropdown.Menu>
-              <Dropdown.Item as={Link} to="/trips/">
-                all
-              </Dropdown.Item>
-              <Dropdown.Item as={Link} to="/trips/easy">
-                easy
-              </Dropdown.Item>
-              <Dropdown.Item as={Link} to="/trips/medium">
-                medium
-              </Dropdown.Item>
-              <Dropdown.Item as={Link} to="/trips/hard">
-                hard
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
+      <Buttons>
+        <RangeBar
+          range={range}
+          setRange={setRange}
+          min={minRange()}
+          max={maxRange()}
+        />
+
+        <Dropdown>
+          <Dropdown.Toggle id="dropdown-basic">
+            {difficultyDrop()}
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item as={Link} to="/trips/">
+              ALL
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/trips/easy">
+              EASY
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/trips/medium">
+              MEDUIM
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} to="/trips/hard">
+              HARD
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </Buttons>
 
       <ListWrapper>{listView()}</ListWrapper>

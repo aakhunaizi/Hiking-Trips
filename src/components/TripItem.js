@@ -21,7 +21,9 @@ const TripItem = ({ trip }) => {
       <GiPathDistance size="30px" />
       <TripLength>{trip.length} KM</TripLength>
       <BiRun size="30px" />
-      <TripDifficulty>{trip.difficulty}</TripDifficulty>
+      <TripDifficulty trip={trip}>
+        {trip.difficulty.toUpperCase()}
+      </TripDifficulty>
       <TripRating>{trip.rating}</TripRating>
     </TripWrapper>
   );

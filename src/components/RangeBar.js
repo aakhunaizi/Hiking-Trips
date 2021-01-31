@@ -1,14 +1,15 @@
 import { RangeBarStyled } from "../styles";
 
-const RangeBar = ({ range, setRange }) => {
+const RangeBar = ({ range, setRange, min, max }) => {
+  console.log(min + " " + max);
   return (
     <div>
-      <p>{range}</p>
+      <p>Length in KM: {range}</p>
       <RangeBarStyled
         id="typeinp"
         type="range"
-        min="0"
-        max="100"
+        min={min}
+        max={max}
         value={range}
         onChange={(event) => {
           setRange(event.target.value);

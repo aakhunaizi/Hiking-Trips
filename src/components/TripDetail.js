@@ -43,7 +43,8 @@ const TripDetail = ({ trips }) => {
       <BiRun size="50px" />
       <DetailedDifficulty> {trip.difficulty} </DetailedDifficulty>
 
-      <DetailedRating>{trip.rating}</DetailedRating>
+      <DetailedRating>Ratings : {trip.rating}</DetailedRating>
+
       <DetailedDescription>{trip.description}</DetailedDescription>
 
       <Link to="/trips">
@@ -51,7 +52,6 @@ const TripDetail = ({ trips }) => {
           <Button variant="primary">Back</Button>
         </BackButton>
       </Link>
-      <h1>Recommended Trips</h1>
       <SuggestListWrapper>{suggestList}</SuggestListWrapper>
     </DetailWrapper>
   );

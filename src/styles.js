@@ -14,12 +14,12 @@ export const HomeImage = styled.img`
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  border: 5px solid orange;
 `;
 
 export const Logo = styled(Link)`
-  padding: auto;
   img {
-    width: 75px;
+    width: 70px;
   }
 `;
 
@@ -34,13 +34,15 @@ export const NavItem = styled(NavLink)`
 export const ListWrapper = styled.div`
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: flex-wrap;
 `;
 
 export const TripWrapper = styled.div`
   margin: 20px;
   display: inline-block;
   border: solid 2px black;
+  display-flex = flex;
+  
   img {
     height: 200px;
     border: 5px solid white;
@@ -79,7 +81,7 @@ export const RangeBarStyled = styled.input`
   margin: 1rem auto;
   margin-top: -20px;
   display: block;
-  width: 500px;
+  width: 350px;
 `;
 
 export const Buttons = styled.div`
@@ -87,7 +89,7 @@ export const Buttons = styled.div`
   margin-bottom: 20px;
 
   button {
-    margin-right: 20px;
+    margin-left: 20px;
   }
 `;
 
@@ -109,6 +111,11 @@ export const TripLength = styled.p`
 
 export const TripDifficulty = styled.p`
   font-size: 25px;
+  color: ${(props) => {
+    if (props.trip.difficulty === "easy") return "green";
+    else if (props.trip.difficulty === "medium") return "orange";
+    else return "red";
+  }};
 `;
 
 export const TripRating = styled.p`
@@ -137,7 +144,7 @@ export const BackButton = styled.div`
 `;
 
 export const DetailedName = styled.p`
-  font-size: 50px;
+  font-size: 40px;
 `;
 
 export const DetailedCity = styled.p`
@@ -145,29 +152,30 @@ export const DetailedCity = styled.p`
 `;
 
 export const DetailedLength = styled.p`
-  font-size: 40px;
+  font-size: 32px;
   display: inline;
 `;
 
 export const DetailedDifficulty = styled.p`
-  font-size: 40px;
+  font-size: 32px;
   display: inline-block;
 `;
 
 export const DetailedRating = styled.p`
-  font-size: 60px;
+  font-size: 28px;
+  margin-bottom: 40px;
 `;
 
 export const DetailedDescription = styled.p`
-  font-size: 30px;
-  margin-top: 40px;
-  margin-bottom: 35px;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   float: right;
 `;
 
 export const DetailedImage = styled.div`
   img {
-    width: 900px;
+    width: 600px;
     float: left;
     border: 5px solid orange;
   }

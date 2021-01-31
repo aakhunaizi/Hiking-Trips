@@ -33,7 +33,6 @@ function App() {
           <Home />
         </Route>
       </Switch>
-      {/* {display} */}
     </div>
   );
 }
