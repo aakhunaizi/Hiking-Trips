@@ -2,11 +2,13 @@ import TripItem from "./TripItem";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import RangeBar from "./RangeBar";
-import { Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { useParams } from "react-router";
 import { Buttons, ListWrapper } from "../styles";
 import { Link } from "react-router-dom";
-const TripsList = ({ trips }) => {
+import { Button } from "react-bootstrap";
+
+const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
   const [query, setQuery] = useState("");
 
   const maxRange = () => {
@@ -27,26 +29,12 @@ const TripsList = ({ trips }) => {
 
   const [range, setRange] = useState(maxRange());
 
-  //const [filter, setFilter] = useState(false);
-
   const { difficulty } = useParams();
 
   const difficultyDrop = () => {
     if (difficulty) return `${difficulty.toUpperCase()}`;
     else return `ALL`;
   };
-
-  // const filteredTrips = trips
-  //   .filter((trip) => trip.name.toLowerCase().includes(query.toLowerCase()))
-  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
-
-  // const filteredByLength = trips
-  //   .filter((trip) => trip.length <= range)
-  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
-
-  // const filteredByDifficulty = trips
-  //   .filter((trip) => trip.difficulty === difficulty)
-  //   .map((trip) => <TripItem key={trip.id} trip={trip} />);
 
   const filtering = (filterType, filterList) => {
     if (filterType === "search") {
@@ -81,18 +69,28 @@ const TripsList = ({ trips }) => {
     }
   };
 
-  // onClick={() => setFilter(!filter)}
+  const whichUnit = () => {
+    if (lengthUnit === true) return "MILES";
+    else return "KM";
+  };
 
   return (
     <>
       <SearchBar setQuery={setQuery} />
 
       <Buttons>
+        <div>
+          <Button variant="primary" onClick={() => setLengthUnit(!lengthUnit)}>
+            {whichUnit()}
+          </Button>
+        </div>
+
         <RangeBar
           range={range}
           setRange={setRange}
           min={minRange()}
           max={maxRange()}
+          lengthUnit={lengthUnit}
         />
 
         <Dropdown>

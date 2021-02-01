@@ -110,8 +110,8 @@ const trips = [
   },
   {
     id: 6,
-    name: "Short Icna Trail",
-    slug: "short-icna-trail",
+    name: "Short Inca Trail",
+    slug: "short-inca-trail",
     description: `Join us for a lodge-based tour highlighting Cusco, a section of the famous Inca Trail, amazing hikes and historic sites, and the world renowned Machu Picchu! With stunning Andean scenery, an amazing diversity of flora and fauna, the comfort of mountain lodges, several days of hiking and exploring the ancient Inca Empire, an opportunity to visit the Inca Trail’s most breathtaking site (Wiñaywayna), and a full day to explore Machu Picchu, this action-packed tour offers a tremendous amount of experience in just 6 days and 5 nights.
 
     We start our lodge-based Peru trekking trip with tours of the historic, Andean town of Cusco and surrounding historic sites. Then, on Day 3, we embark on a spectacular, off-the-beaten-path trek to a high mountain quarry used by the Inca. On Day 4 we tackle the “Short Inca Trail,” a journey that takes us past stunning hillside ruins and amazing views to the spectacular Sun Gate, which protects and overlooks Machu Picchu. On Day 5 we enjoy a full tour of Machu Picchu by our local, expert guide.`,

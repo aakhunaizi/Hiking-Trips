@@ -10,24 +10,32 @@ import NavBar from "./components/NavBar";
 function App() {
   const [_trips, setTrips] = useState(trips);
 
-  // const display = trip ? (
-  //   <TripDetail trip={trip} setTrip={setTrip} trips={trips} />
-  // ) : (
-  //   <TripsList trips={_trips} setTrip={setTrip} />
-  // );
+  const [lengthUnit, setLengthUnit] = useState(false);
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route path="/trips/trip/:tripSlug">
-          <TripDetail trips={trips} />
+          <TripDetail
+            trips={trips}
+            lengthUnit={lengthUnit}
+            setLengthUnit={setLengthUnit}
+          />
         </Route>
         <Route path="/trips/:difficulty">
-          <TripsList trips={_trips} />
+          <TripsList
+            trips={_trips}
+            lengthUnit={lengthUnit}
+            setLengthUnit={setLengthUnit}
+          />
         </Route>
         <Route path="/trips">
-          <TripsList trips={_trips} />
+          <TripsList
+            trips={_trips}
+            lengthUnit={lengthUnit}
+            setLengthUnit={setLengthUnit}
+          />
         </Route>
         <Route path="/">
           <Home />
