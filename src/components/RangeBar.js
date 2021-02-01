@@ -1,14 +1,9 @@
 import { RangeBarStyled } from "../styles";
 
-const RangeBar = ({ range, setRange, min, max, lengthUnit }) => {
-  const whichUnit = () => {
-    if (lengthUnit === true) return "MILES";
-    else return "KM";
-  };
-
+const RangeBar = ({ range, setRange, min, max }) => {
   return (
     <div>
-      <p>{`Length in ${whichUnit()}: ${range}`}</p>
+      <p>{`Length in KM: ${range}`}</p>
       <RangeBarStyled
         id="typeinp"
         type="range"

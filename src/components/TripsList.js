@@ -6,7 +6,6 @@ import { Dropdown } from "react-bootstrap";
 import { useParams } from "react-router";
 import { Buttons, ListWrapper } from "../styles";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
   const [query, setQuery] = useState("");
@@ -69,28 +68,16 @@ const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
     }
   };
 
-  const whichUnit = () => {
-    if (lengthUnit === true) return "MILES";
-    else return "KM";
-  };
-
   return (
     <>
       <SearchBar setQuery={setQuery} />
 
       <Buttons>
-        <div>
-          <Button variant="primary" onClick={() => setLengthUnit(!lengthUnit)}>
-            {whichUnit()}
-          </Button>
-        </div>
-
         <RangeBar
           range={range}
           setRange={setRange}
           min={minRange()}
           max={maxRange()}
-          lengthUnit={lengthUnit}
         />
 
         <Dropdown>

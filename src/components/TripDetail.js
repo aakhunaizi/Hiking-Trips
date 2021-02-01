@@ -38,7 +38,7 @@ const TripDetail = ({ trips }) => {
       <DetailedName>{trip.name}</DetailedName>
       <DetailedCity>{trip.city}</DetailedCity>
       <GiPathDistance size="50px" />
-      <DetailedLength>{trip.length}KM</DetailedLength>
+      <DetailedLength>{trip.length} KM</DetailedLength>
       <br />
       <BiRun size="50px" />
       <DetailedDifficulty> {trip.difficulty} </DetailedDifficulty>

@@ -90,7 +90,6 @@ export const Buttons = styled.div`
 
   button {
     margin-left: 20px;
-    margin-right: 20px;
   }
 `;
 

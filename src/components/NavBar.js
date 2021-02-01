@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { Logo, NavItem } from "../styles";
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <nav className="navbar navbar-expand">
       <h4 className="navbar-brand">
