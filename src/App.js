@@ -24,7 +24,7 @@ function App() {
           <TripsList trips={_trips} />
         </Route>
         <Route path="/">
-          <Home />
+          <Home trips={_trips} />
         </Route>
       </Switch>
     </div>
