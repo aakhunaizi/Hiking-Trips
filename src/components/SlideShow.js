@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SlideShow = ({ trips }) => {
   const tripsSlides = trips.map((trip) => {
     return (
-      <Carousel.Item>
+      <Carousel.Item key={trip.id}>
         <Link to={`/trips/trip/${trip.slug}`}>
           <img
             className="d-block w-100"

@@ -16,6 +16,7 @@ import {
 } from "../styles";
 import TripItem from "./TripItem";
 import { Button } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const TripDetail = ({ trips }) => {
   const { tripSlug } = useParams();
@@ -31,6 +32,9 @@ const TripDetail = ({ trips }) => {
 
   return (
     <DetailWrapper>
+      <Helmet>
+        <title>{trip.name}</title>
+      </Helmet>
       <DetailedImage>
         <img alt={trip.name} src={trip.image} />
       </DetailedImage>

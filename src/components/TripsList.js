@@ -6,6 +6,7 @@ import { Dropdown } from "react-bootstrap";
 import { useParams } from "react-router";
 import { Buttons, ListWrapper } from "../styles";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
   const [query, setQuery] = useState("");
@@ -70,6 +71,9 @@ const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Our Trips</title>
+      </Helmet>
       <SearchBar setQuery={setQuery} />
 
       <Buttons>

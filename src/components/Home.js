@@ -1,11 +1,13 @@
 import { Title, Description } from "../styles";
-import { Carousel } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import SlideShow from "./SlideShow";
+import { Helmet } from "react-helmet";
 
 const Home = ({ trips }) => {
   return (
     <>
+      <Helmet>
+        <title>Hiking Trips </title>
+      </Helmet>
       <Title>Hiking Trips</Title>
       <Description>Let's go on an Adventure!</Description>
       <SlideShow trips={trips} />
