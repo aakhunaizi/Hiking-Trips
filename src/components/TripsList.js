@@ -97,7 +97,7 @@ const TripsList = ({ trips, lengthUnit, setLengthUnit }) => {
               EASY
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/trips/medium">
-              MEDUIM
+              MEDIUM
             </Dropdown.Item>
             <Dropdown.Item as={Link} to="/trips/hard">
               HARD
